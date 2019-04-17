@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.valid?
+      @post.save
       redirect_to post_path
     else
       render :new
